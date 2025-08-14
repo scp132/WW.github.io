@@ -12,8 +12,9 @@ body, html {
     padding: 0;
     font-family: 'Orbitron', sans-serif;
     overflow-x: hidden;
-    background-color: #0e0e0e;
-    color: #f0f0f0;
+    color: #fff;
+    height: 100%;
+    background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm1seDI2czhwOTY0Z3ZkbXMxazU2cW9vajRxemF2cmU4cGp5MDdseiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/guNXesWtLfqOfnWwmx/giphy.gif') center/cover no-repeat fixed;
 }
 
 /* Preloader */
@@ -46,33 +47,7 @@ body, html {
 header {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(120deg, #7AAF47, #6DC1E5);
-    color: #fff;
     position: relative;
-    overflow: hidden;
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background: radial-gradient(circle, #7AAF47 0%, #6DC1E5 50%, transparent 70%);
-    animation: rotateBG 20s linear infinite;
-    z-index: -1;
-}
-
-@keyframes rotateBG {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-header h1 {
-    font-size: 4em;
-    margin: 0;
-    color: #fff;
 }
 
 /* Discord Button */
@@ -93,6 +68,14 @@ header h1 {
     background-color: #5b6eae;
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.6);
+    font-size: 14px;
+}
+
 /* Fade-in sections */
 .fade-in {
     opacity: 0;
@@ -102,7 +85,6 @@ header h1 {
 @keyframes fadeIn {
     to { opacity: 1; }
 }
-
 </style>
 </head>
 <body>
@@ -114,20 +96,18 @@ header h1 {
 
 <!-- Основной контент -->
 <div id="content" style="display:none;">
-
 <header>
     <h1>CLAN WW</h1>
     <a class="discord-btn" href="https://discord.gg/YktHny6jqS" target="_blank">Войти в Discord</a>
 </header>
 
-<footer class="fade-in" style="animation-delay: 0.5s; text-align:center; padding:20px; background:#111;">
+<footer class="fade-in" style="animation-delay: 0.5s;">
     © 2025 Clan WW. Все права защищены.
 </footer>
-
 </div>
 
 <script>
-// Показываем preloader 3 сек, затем основной контент
+// Preloader 3 секунды
 setTimeout(() => {
     document.getElementById('preloader').style.display = 'none';
     document.getElementById('content').style.display = 'block';
