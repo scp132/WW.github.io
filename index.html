@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clan WW – Rust Сообщество</title>
-<link rel="icon" href="favicon.png" type="image/png">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
@@ -31,17 +31,26 @@ body, html {
     flex-direction: column;
 }
 
-.tracking-in-expand {
+/* Эффект дисперсии названия */
+#site-title {
     font-size: 4em;
     color: #7AAF47;
-    letter-spacing: 0.5em;
-    animation: tracking-in-expand 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    display: flex;
+    justify-content: center;
 }
 
-@keyframes tracking-in-expand {
-    0% { letter-spacing: -0.5em; opacity: 0; }
-    40% { opacity: 0.6; }
-    100% { letter-spacing: 0.5em; opacity: 1; }
+#site-title span {
+    opacity: 0;
+    transform: translateY(-50px) rotate(-30deg);
+    display: inline-block;
+    animation: disperse 1s forwards;
+}
+
+@keyframes disperse {
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
 }
 
 /* Header */
@@ -69,12 +78,6 @@ header::before {
 @keyframes rotateBG {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-
-header h1 {
-    font-size: 4em;
-    margin: 0;
-    color: #fff;
 }
 
 /* GIF баннер */
@@ -150,7 +153,7 @@ footer {
 
 <!-- Preloader -->
 <div id="preloader">
-    <div class="tracking-in-expand">CLAN WW</div>
+    <div id="site-title"></div>
 </div>
 
 <!-- Основной контент -->
@@ -186,6 +189,16 @@ setTimeout(() => {
     document.getElementById('preloader').style.display = 'none';
     document.getElementById('content').style.display = 'block';
 }, 3000);
+
+// Анимация дисперсии названия
+const siteTitle = document.getElementById('site-title');
+const titleText = "CLAN WW";
+titleText.split("").forEach((char, index) => {
+    const span = document.createElement('span');
+    span.textContent = char;
+    span.style.animationDelay = (index * 0.2) + "s";
+    siteTitle.appendChild(span);
+});
 
 // Генерация снежинок на всём сайте
 const snowContainer = document.getElementById('snow-container');
