@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clan WW – Rust Clan/title>
+<title>Clan WW – Rust Сообщество</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
@@ -12,9 +12,8 @@ body, html {
     padding: 0;
     font-family: 'Orbitron', sans-serif;
     overflow-x: hidden;
-    color: #fff;
-    height: 100%;
-    background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm1seDI2czhwOTY0Z3ZkbXMxazU2cW9vajRxemF2cmU4cGp5MDdseiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/guNXesWtLfqOfnWwmx/giphy.gif') center/cover no-repeat fixed;
+    background-color: #0e0e0e;
+    color: #f0f0f0;
 }
 
 /* Preloader */
@@ -76,6 +75,15 @@ header h1 {
     color: #fff;
 }
 
+/* GIF баннер сверху */
+.banner-gif {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 30px;
+}
+
 /* Discord Button */
 .discord-btn {
     display: inline-block;
@@ -104,26 +112,6 @@ header h1 {
     to { opacity: 1; }
 }
 
-/* Дополнительные секции для длинного вида */
-section {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 40px 20px;
-    background: rgba(0,0,0,0.6);
-    border-radius: 15px;
-}
-
-section h2 {
-    text-align: center;
-    color: #7AAF47;
-    margin-bottom: 20px;
-}
-
-section p {
-    font-size: 1.1em;
-    line-height: 1.6em;
-    text-align: center;
-}
 </style>
 </head>
 <body>
@@ -136,28 +124,15 @@ section p {
 <!-- Основной контент -->
 <div id="content" style="display:none;">
 
+<!-- GIF баннер сверху -->
+<img class="banner-gif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm1seDI2czhwOTY0Z3ZkbXMxazU2cW9vajRxemF2cmU4cGp5MDdseiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/guNXesWtLfqOfnWwmx/giphy.gif" alt="Clan WW Banner">
+
 <header>
     <h1>CLAN WW</h1>
     <a class="discord-btn" href="https://discord.gg/YktHny6jqS" target="_blank">Войти в Discord</a>
 </header>
 
-<!-- Новые секции -->
-<section class="fade-in" style="animation-delay:0.3s;">
-    <h2>О клане</h2>
-    <p>Clan WW – активный Rust клан. Мы участвуем в рейдах, PvP и всегда поддерживаем друг друга. Присоединяйся и стань частью нашей команды!</p>
-</section>
-
-<section class="fade-in" style="animation-delay:0.6s;">
-    <h2>Наши достижения</h2>
-    <p>Мы побеждали в крупных PvP сражениях и рейдах, собирали ресурсы и строили базы, которые никто не смог разрушить.</p>
-</section>
-
-<section class="fade-in" style="animation-delay:0.9s;">
-    <h2>Как присоединиться</h2>
-    <p>Нажмите кнопку Discord выше и подайте заявку. Мы свяжемся с вами и добавим в команду!</p>
-</section>
-
-<footer class="fade-in" style="animation-delay: 1s; text-align:center; padding:20px; background:#111;">
+<footer class="fade-in" style="animation-delay: 0.5s; text-align:center; padding:20px; background:#111;">
     © 2025 Clan WW. Все права защищены.
 </footer>
 
