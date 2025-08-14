@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clan WW – Rust Сообщество</title>
+<link rel="icon" href="favicon.png" type="image/png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
@@ -87,6 +88,24 @@ header h1 {
     border-radius: 15px;
 }
 
+/* Присоединиться кнопка */
+.join-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #7289da;
+    color: #fff;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3em;
+    transition: 0.3s;
+    margin: 40px auto;
+}
+
+.join-btn:hover {
+    background-color: #5b6eae;
+}
+
 /* Fade-in sections */
 .fade-in {
     opacity: 0;
@@ -146,8 +165,16 @@ footer {
     <h1>CLAN WW</h1>
 </header>
 
+<!-- Присоединиться кнопка -->
+<div style="text-align:center;">
+    <a class="join-btn" href="https://discord.gg/YktHny6jqS" target="_blank">
+        Присоединиться
+    </a>
+</div>
+
 <footer class="fade-in" style="animation-delay:0.5s;">
-    © 2025 Clan WW. Все права защищены.
+    © 2025 Clan WW. Все права защищены. <br>
+    Owner: @1066454333085986898
     <div id="snow-container"></div>
 </footer>
 
@@ -172,7 +199,7 @@ for (let i = 0; i < snowCount; i++) {
     snow.style.fontSize = (Math.random() * 12 + 8) + 'px';
     snow.style.animationDuration = (Math.random() * 5 + 5) + 's';
     snow.style.opacity = Math.random() * 0.5 + 0.5;
-    document.body.appendChild(snow); // теперь снег на всём сайте
+    document.body.appendChild(snow);
 }
 </script>
 
