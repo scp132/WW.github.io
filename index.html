@@ -14,6 +14,7 @@ body, html {
     overflow-x: hidden;
     background-color: #0e0e0e;
     color: #f0f0f0;
+    position: relative;
 }
 
 /* Preloader */
@@ -96,27 +97,7 @@ header h1 {
     to { opacity: 1; }
 }
 
-/* News section */
-.news-section {
-    text-align: center;
-    margin: 40px 20px;
-}
-
-.news-section h2 {
-    color: #6DC1E5;
-    font-size: 2em;
-}
-
-.news-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.news-section li {
-    margin: 10px 0;
-}
-
-/* Footer со снегом */
+/* Footer */
 footer {
     text-align:center;
     padding:40px 20px;
@@ -125,7 +106,7 @@ footer {
     overflow:hidden;
 }
 
-/* Снег */
+/* Снег на всём сайте */
 .snowflake {
     position: absolute;
     top: -10px;
@@ -143,14 +124,6 @@ footer {
 @keyframes fall {
     0% { transform: translateY(0) rotate(0deg); }
     100% { transform: translateY(100vh) rotate(360deg); }
-}
-
-/* Visitor counter */
-.visitor-counter {
-    text-align:center;
-    margin-top:20px;
-    font-size:1.2em;
-    color:#7AAF47;
 }
 </style>
 </head>
@@ -173,22 +146,6 @@ footer {
     <h1>CLAN WW</h1>
 </header>
 
-<!-- News section -->
-<section class="news-section">
-    <h2>Последние новости</h2>
-    <ul>
-        <li>⚔ 15.08.2025 — Новый ивент на сервере Rust</li>
-        <li>🏆 10.08.2025 — Победа клана WW в турнире</li>
-        <li>💡 05.08.2025 — Обновление карты и новые постройки</li>
-    </ul>
-</section>
-
-<!-- Visitor counter -->
-<div class="visitor-counter">
-    Посетителей на сайте: <span id="visitor-count"></span>
-</div>
-
-<!-- Footer с снегом -->
 <footer class="fade-in" style="animation-delay:0.5s;">
     © 2025 Clan WW. Все права защищены.
     <div id="snow-container"></div>
@@ -203,14 +160,7 @@ setTimeout(() => {
     document.getElementById('content').style.display = 'block';
 }, 3000);
 
-// Visitor counter
-fetch('https://api.countapi.xyz/hit/ww-rust/visits')
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('visitor-count').textContent = data.value;
-  });
-
-// Генерация снежинок
+// Генерация снежинок на всём сайте
 const snowContainer = document.getElementById('snow-container');
 const snowCount = 50;
 
@@ -222,7 +172,7 @@ for (let i = 0; i < snowCount; i++) {
     snow.style.fontSize = (Math.random() * 12 + 8) + 'px';
     snow.style.animationDuration = (Math.random() * 5 + 5) + 's';
     snow.style.opacity = Math.random() * 0.5 + 0.5;
-    snowContainer.appendChild(snow);
+    document.body.appendChild(snow); // теперь снег на всём сайте
 }
 </script>
 
